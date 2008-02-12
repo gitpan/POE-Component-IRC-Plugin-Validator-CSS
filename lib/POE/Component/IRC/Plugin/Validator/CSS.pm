@@ -3,7 +3,7 @@ package POE::Component::IRC::Plugin::Validator::CSS;
 use warnings;
 use strict;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use Carp;
 use POE qw(Component::WebService::Validator::CSS::W3C);
@@ -22,6 +22,7 @@ sub new {
     # fill in the defaults.
     %args = (
         auto                => 1,
+        eat                 => 1,
         trigger             => qr/^cssval\s+(?=\S)/i,
         addressed           => 1,
         listen_for_input    => [ qw(public  notice  privmsg) ],
@@ -171,6 +172,8 @@ sub _parse_input {
             _type       => $type,
         }
     );
+
+    return $self->{eat} ? PCI_EAT_ALL : PCI_EAT_NONE;
 }
 
 sub _start_val {
@@ -506,6 +509,16 @@ unless you specify the C<ua> argument which takes an L<LWP::UserAgent>
 object, the L<LWP::UserAgent> object with its default parameters will be
 used with I<exception of the> C<timeout> argument, which plugin sets
 to C<15> seconds.
+
+=head3 eat
+
+    ->new( eat => 0 );
+
+If set to a false value plugin will return a C<PCI_EAT_NONE> after
+responding. If eat is set to a true value, plugin will return a
+L<PCI_EAT_ALL> after responding. See L<POE::Component::IRC::Plugin>
+documentation for more information if you are interested. B<Defaults to>:
+C<1>
 
 =head1 EMITED EVENTS
 
