@@ -1,0 +1,26 @@
+---
+name: POE-Component-IRC-Plugin-Validator-CSS
+version: 0.01
+author:
+  - 'Zoffix Znet <zoffix@cpan.org>'
+abstract: |-
+  non-blocking CSS validator
+  for IRC bots.
+license: perl
+resources:
+  license: http://dev.perl.org/licenses/
+requires:
+  Carp: 1.04
+  LWP::UserAgent: 2.036
+  POE::Component::IRC::Plugin: 0.09
+  POE::Component::WebService::Validator::CSS::W3C: 0.02
+build_requires:
+  Test::More: 0
+provides:
+  POE::Component::IRC::Plugin::Validator::CSS:
+    file: lib/POE/Component/IRC/Plugin/Validator/CSS.pm
+    version: 0.01
+generated_by: Module::Build version 0.2808
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
