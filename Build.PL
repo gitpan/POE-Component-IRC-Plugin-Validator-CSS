@@ -10,11 +10,14 @@ my $builder = Module::Build->new(
     build_requires => {
         'Test::More' => 0,
     },
+    configure_requires => { 'Module::Build' => 0.40 },
     requires => {
-        'Carp'                                            => 1.04,
+        'Carp'                                            => 0,
         'POE::Component::WebService::Validator::CSS::W3C' => 0.02,
-        'POE::Component::IRC::Plugin'                     => 0.09,
-        'LWP::UserAgent'                                  => 2.036,
+        'POE::Component::IRC::Plugin'                     => 0,
+        'LWP::UserAgent'                                  => 0,
+        'perl'                                            => '5.006',
+        'POE'                                             => 0,
     },
     add_to_cleanup      => [ 'POE-Component-IRC-Plugin-Validator-CSS-*' ],
     create_makefile_pl => 'traditional',

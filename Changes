@@ -1,9 +1,12 @@
 Revision history for POE-Component-IRC-Plugin-Validator-CSS
 
-0.02    Tue Feb 12 2008
-        fixed the return of the plugin (PCI_EAT_*)
-        and documented the 'eat' argument to constructor
+0.03    2013-10-30
+        - Minor updates to comply with the specs and Kwalitee game
 
-0.01    Sun Feb 10 2008
-        First version, released on an unsuspecting world.
+0.02    2008-02-12
+        - fixed the return of the plugin (PCI_EAT_*)
+          and documented the 'eat' argument to constructor
+
+0.01    2008-02-10
+        - First version, released on an unsuspecting world.
 
